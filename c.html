@@ -1,0 +1,30 @@
+<!--
+
+    1. Solving problems using array functions on rest countries data (https://restcountries.com/v3.1/all).
+    c. Print the following details name, capital, flag, using forEach method
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("GET", "https://restcountries.com/v3.1/all");
+      xhttp.send();
+
+      xhttp.onload = function () {
+        var responseData = JSON.parse(xhttp.responseText);
+
+        responseData.forEach(function (list) {
+          console.log(list.name, list.capital, list.flag);
+        });
+      };
+    </script>
+  </body>
+</html>
